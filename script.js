@@ -9,15 +9,20 @@ Shaw
 
 "Use Strict";
 
-let cargoWeight = [];           //this will hold an array of different item weights
-let totalCargoWeight = 0;       //this will hold the total weight of all items
-let itemWeight = 0;             //this will hold the weight of a single item
-let maxWeightLbs = 1000;        //this specifies the maximum weight for all cargo
-let average = 0;                //this will hold the average weight of all items
+let cargoWeight = [];           //this variable will hold an array of different item weights
+let totalCargoWeight = 0;       //this variable will hold the total weight of all items
+let itemWeight = 0;             //this variable will hold the weight of a single item
+let maxWeightLbs = 1000;        //this variable specifies the maximum weight for all cargo
+let average = 0;                //this variable will hold the average weight of all items
 
-//add your loop around this 
+//Start of Do\While loop where user input will be accepted. If user input is not greater than zero lbs 
+//or value entered is not -1. prompt user to enter a valid value. If value entered is greater than 
+//zero lbs, accumulate value in the cargoWeight array. If -1 is entered by the user, discontinue 
+//processing.
+
 do {
 
+//Prompt user for entry
 itemWeight = parseFloat(prompt("Please enter the item weight in pounds or input -1 to exit."));
 if(itemWeight >= 0) {
     cargoWeight[cargoWeight.length] = itemWeight;
@@ -25,17 +30,19 @@ if(itemWeight >= 0) {
     alert("Item weight must be a valid number that is greater than zero pounds!");
 } 
 
-} while (itemWeight != -1)
+} while (itemWeight != -1)  
+
+//At this point, user has entered a -1 to exit Do / While loop.
+// If the total number of weight entries is greater than zero, 
+// average the weights in the cargoWeight array, contstruct / print the appropriate html message
+// to screen, and exit loop.
 
 if(cargoWeight.length > 0) {
     for (let cargoweightItem of cargoWeight) {
-    //for (let i = 0; i < cargoWeight.length; i++) {
         totalCargoWeight = parseFloat(totalCargoWeight + cargoweightItem);
     }
     average = parseFloat(totalCargoWeight / cargoWeight.length);
 }
-
-//alert("Total cargo weight is " + totalCargoWeight +"; average item weight is " + average);
 
 let html = 
 `
