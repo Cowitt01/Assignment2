@@ -15,7 +15,7 @@ let itemWeight = 0;             //this variable will hold the weight of a single
 let maxWeightLbs = 1000;        //this variable specifies the maximum weight for all cargo
 let average = 0;                //this variable will hold the average weight of all items
 
-//Start of Do\While loop where user input will be accepted. If user input is not greater than zero lbs 
+//Do\While loop where user input will be accepted. If user input is not greater than zero lbs 
 //or value entered is not -1. prompt user to enter a valid value. If value entered is greater than 
 //zero lbs, accumulate value in the cargoWeight array. If -1 is entered by the user, discontinue 
 //processing.
@@ -32,10 +32,9 @@ if(itemWeight >= 0) {
 
 } while (itemWeight != -1)  
 
-//At this point, user has entered a -1 to exit Do / While loop.
+// At this point, user has entered a -1 to exit Do / While loop.
 // If the total number of weight entries is greater than zero, 
-// average the weights in the cargoWeight array, contstruct / print the appropriate html message
-// to screen, and exit loop.
+// average the weights in the cargoWeight array.
 
 if(cargoWeight.length > 0) {
     for (let cargoweightItem of cargoWeight) {
@@ -44,6 +43,7 @@ if(cargoWeight.length > 0) {
     average = parseFloat(totalCargoWeight / cargoWeight.length);
 }
 
+// Contstruct / print the appropriate html message to screen.
 let html = 
 `
     <h1>Space Weight</h1>  
